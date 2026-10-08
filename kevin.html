@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+        <html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #f1f2f6;
+            margin-bottom: 30px;
+        }
+
+        /* Estilo del pastel */
+        .cake {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            margin: 40px auto 20px auto;
+        }
+
+        .plate {
+            position: absolute;
+            bottom: 0;
+            left: -15px;
+            width: 180px;
+            height: 15px;
+            background-color: #dcdde1;
+            border-radius: 10px;
+        }
+
+        .layer {
+            position: absolute;
+            width: 150px;
+            height: 40px;
+            background-color: #ff9ff3;
+            border-radius: 10px 10px 0 0;
+            bottom: 15px;
+        }
+
+        .layer-top {
+            position: absolute;
+            width: 130px;
+            height: 35px;
+            background-color: #feca57;
+            border-radius: 10px 10px 0 0;
+            bottom: 55px;
+            left: 10px;
+        }
+
+        .candle {
+            position: absolute;
+            width: 12px;
+            height: 35px;
+            background-color: #48dbfb;
+            bottom: 90px;
+            left: 69px;
+            border-radius: 4px;
+        }
+
+        .flame {
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            background-color: #ff9f43;
+            border-radius: 50% 50% 20% 20%;
+            bottom: 125px;
+            left: 67.5px;
+            animation: flicker 0.6s infinite alternate;
+            box-shadow: 0 0 15px #ff9f43;
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1); opacity: 0.9; }
+            100% { transform: scale(1.15); opacity: 1; }
+        }
+
+        .btn {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #ee5253;
+            transform: scale(1.05);
+        }
+
+        #mensaje-secreto {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #55efc4;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>¡Feliz Cumpleaños!</h1>
+        <p>Una pequeña sorpresa para un gran día...</p>
+        
+        <!-- Animación del pastel -->
+        <div class="cake">
+            <div class="plate"></div>
+            <div class="layer"></div>
+            <div class="layer-top"></div>
+            <div class="candle"></div>
+            <div class="flame" id="flama"></div>
+        </div>
+
+        <button class="btn" onclick="mostrarMensaje()">¡Recibir Pastel!</button>
+        <div id="mensaje-secreto">🎂 ¡Aquí tienes tu pastel! Que pases un día genial. 🎉</div>
+    </div>
+
+    <script>
+        function mostrarMensaje() {
+            const mensaje = document.getElementById('mensaje-secreto');
+            mensaje.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
